@@ -161,3 +161,17 @@ function showPopup(content) {
   document.body.appendChild(popup);
   document.querySelector('.close-popup').addEventListener('click', () => popup.remove());
 }
+
+const toggle = document.getElementById('mode-toggle');
+const body = document.body;
+
+// استرجاع الوضع المحفوظ
+if(localStorage.getItem('mode') === 'dark') body.classList.add('dark-mode');
+else body.classList.add('light-mode');
+
+toggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  body.classList.toggle('light-mode');
+  const mode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+  localStorage.setItem('mode', mode);
+});
