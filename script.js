@@ -138,3 +138,13 @@ function openPost(postId) {
   alert('هنا يمكنك فتح محتوى المقال: ' + postId);
   // لاحقًا يمكن فتح popup حقيقي
 }
+
+function scrollReveal() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const height = window.innerHeight;
+    if(top < height - 100) el.classList.add('active');
+  });
+}
+window.addEventListener('scroll', scrollReveal);
+scrollReveal();
