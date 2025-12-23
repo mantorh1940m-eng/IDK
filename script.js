@@ -127,3 +127,14 @@ function getReply(msg) {
   if(msg.includes('تفكير')) return 'التفكير النقدي يبدأ بالطرح الأسئلة قبل قبول أي شيء.';
   return 'عذرًا، لم أفهم سؤالك، حاول صياغة السؤال بطريقة أخرى.';
 }
+
+document.querySelectorAll('.read-more').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); // يمنع النزول للصفحة
+  });
+});
+
+function openPost(postId) {
+  alert('هنا يمكنك فتح محتوى المقال: ' + postId);
+  // لاحقًا يمكن فتح popup حقيقي
+}
