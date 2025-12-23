@@ -252,3 +252,11 @@ footer .social a {
   opacity: 1;
   transform: translateY(0);
 }
+body.light-mode {
+  background: #f1f5f9;
+  color: #020617;
+}
+body.dark-mode {
+  background: #020617;
+  color: #e5e7eb;
+}
