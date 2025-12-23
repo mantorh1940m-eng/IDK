@@ -148,3 +148,16 @@ function scrollReveal() {
 }
 window.addEventListener('scroll', scrollReveal);
 scrollReveal();
+
+function showPopup(content) {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.innerHTML = `
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      ${content}
+    </div>
+  `;
+  document.body.appendChild(popup);
+  document.querySelector('.close-popup').addEventListener('click', () => popup.remove());
+}
